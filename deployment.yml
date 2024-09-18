@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-from-config-repo
+  labels:
+    app: nginx
+  annotations:
+    port.io/service-id: "demo"
+spec:
+  replicas: 3  # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest  # Pulls the latest NGINX image
+        ports:
+        - containerPort: 80  # NGINX listens on port 80
