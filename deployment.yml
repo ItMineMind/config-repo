@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
   annotations:
-    port.io/service-id: "demo"
+    service-name: "config-repo"
 spec:
   replicas: 3  # You can adjust the number of replicas as needed
   selector:
