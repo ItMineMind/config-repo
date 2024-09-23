@@ -4,10 +4,8 @@ metadata:
   name: nginx-deployment-from-config-repo
   labels:
     app: nginx
-  annotations:
-    service-name: "config-repo"
 spec:
-  replicas: 3  # You can adjust the number of replicas as needed
+  replicas: 2  # You can adjust the number of replicas as needed
   selector:
     matchLabels:
       app: nginx
